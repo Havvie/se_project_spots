@@ -1,5 +1,23 @@
 # Project 3: Spots
 
+An image sharing site
+
+## Description
+
+This is a photo sharing app that allows users to upload pictures of different locations (spots) visited. This site has a simple and user friendly interface. Allowing users and visitors to like as well as submit images. The images are displayed in a grid/gallery layout. This site is desktop, tablet, and mobile friendly. Helping to capture precious and unforgetable memories.
+
+## Tech Stack
+
+- HTML
+- CSS
+- Responsive Design
+
+## Deployment
+
+This webpage is deployed to Github Pages
+
+Deployment link: 
+
 ### Overview  
 
 * Intro  

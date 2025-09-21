@@ -7,22 +7,103 @@
   <meta name="author" content="Havren Wright">
   <meta name="keywords" content="spots, social media, photos, sharing">
 
-  <title>Spots</title>
-
   <link rel="stylesheet" href="./pages/index.css">
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+   <title>Spots</title>
 </head>
 <body>
   <div class="page">
     <header class="header">
-
+      <img
+        src="./images/logo.svg"
+        class="header__logo"
+        alt="Spots con">
     </header>
     <main class="content">
-      <section class="profile"></section>
-      <section class="cards"></section>
+      <section class="profile page__section">
+        <img
+          src="./images/avatar.jpg"
+          alt="Avatar"
+          class="profile__avatar">
+        <div class="profile__column">
+          <h1 class="profile__title">Bessie Coleman</h1>
+          <p class="profile__description">Civil Aviator</p>
+          <button type="button" button class="profile__edit-btn">
+            <img src="./images/pencil.svg" alt="Pencil icon" >Edit profile
+          </button>
+        </div>
+        <button type="button" class="profile__add-btn">
+          <img src="./images/plus_symbol.svg" alt="New Post icon">New Post
+        </button>
+      </section>
+      <section class="cards page__section">
+        <ul class="cards__list">
+          <li class="card">
+            <img
+              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">Val Thorens</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/2-photo-by-ceiline-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">Restaurant terrace</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">An outdoor cafe</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">A very long bridge, over the forest...</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">Tunnel with morning light</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+          <li class="card">
+            <img
+              src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+              class="card__image"
+              alt="Val Thorens">
+            <div class="card__content">
+              <h2 class="card__title">Mountain house</h2>
+              <button type="button" class="card__like-btn">
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
     <footer class="footer">
-
+      <p class="footer__paragraph">2025 &copy; Spots</p>
     </footer>
   </div>
 </body>
