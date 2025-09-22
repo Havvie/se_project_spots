@@ -16,7 +16,8 @@ This is a photo sharing app that allows users to upload pictures of different lo
 
 This webpage is deployed to Github Pages
 
-Deployment link: 
+Deployment link: (https://havvie.github.io/se_project_spots/)
+Video Link
 
 ### Overview  
 
