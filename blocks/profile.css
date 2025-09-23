@@ -42,10 +42,11 @@
   font-size: 16px;
   line-height: 1;
   font-weight: 500;
-  color: #212121;
+  color: #212121b2;
 }
 
 .profile__edit-btn {
+  color: #212121;
   margin-top: auto;
   opacity: 70%;
   width: 107.34px;
@@ -84,6 +85,9 @@
   justify-content: center;
   align-items: center;
   opacity: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
 }
 
 .profile__add-btn:hover {
@@ -123,8 +127,6 @@
 
   .profile__edit-btn {
     margin: 0 0 20px;
-    line-height: 100%;
-    font-size: 16px;
   }
 
   .profile__add-btn {

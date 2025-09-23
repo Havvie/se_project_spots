@@ -4,3 +4,10 @@
   font-weight: 400;
   src: url(../vendor/fonts/Poppins-Regular.ttf);
 }
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../vendor/fonts/Poppins-Medium.ttf) format("truetype");
+}
