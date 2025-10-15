@@ -8,7 +8,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   justify-content: center;
   gap: 40px 20px;
 }
@@ -20,6 +20,6 @@
   }
   .cards {
     padding-bottom: 20px;
-    width: 100
+    width: 100%;
   }
 }
