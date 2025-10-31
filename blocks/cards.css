@@ -15,8 +15,9 @@
 
 @media (max-width: 630px) {
   .cards__list {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(288px, 1fr);
     gap: 20px;
+    padding: 0 16px;
   }
   .cards {
     padding-bottom: 20px;
