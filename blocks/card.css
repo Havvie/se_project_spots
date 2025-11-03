@@ -11,13 +11,8 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
-  margin-bottom: 20px;
   transition: 0.3s ease;
   cursor: pointer;
-}
-
-.card__image:hover {
-  transform: scale(1.03);
 }
 
 .card__image:focus-visible {
@@ -54,7 +49,6 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  z-index: 10;
 }
 
 .card__delete-btn:hover {
