@@ -41,13 +41,13 @@
   width: 40px;
   height: 40px;
   border: none;
-  opacity: 40%;
+  opacity: 0.4;
   background: url(../images/closeIcon_dark.svg) no-repeat center;
   cursor: pointer;
 }
 
 .modal__close-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .modal__close-btn_type_preview {
@@ -63,7 +63,7 @@
 
 .modal__close-btn_type_preview:hover {
   background: url(../images/close_white.svg) no-repeat center;
-  opacity: 100%;
+  opacity: 1;
 }
 
 .modal__title {
@@ -81,6 +81,8 @@
 
 .modal__label {
   margin: 0 0 32px;
+  display: block;
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .modal__input {
@@ -95,8 +97,26 @@
 }
 
 .modal__input::placeholder {
-  color: #2121214D;
+  color: #212121;
   cursor: pointer;
+  opacity: 30%
+}
+
+.modal__input:hover {
+  border: 1px solid #212121;
+}
+
+.modal__input_type_error {
+  border: 1px solid #FF0000;
+  opacity: 0.6;
+}
+
+.modal__error {
+  display: block;
+  margin-top: 8px;
+  color: #FF0000;
+  font-size: 16px;
+  opacity: 0.7;
 }
 
 .modal__submit-btn {
@@ -112,7 +132,14 @@
 }
 
 .modal__submit-btn:hover {
-  background: #212121CC;
+  background: #212121;
+  opacity: 0.8;
+}
+
+.modal__submit-btn-disabled {
+  background: #212121;
+  opacity: 0.5;
+  cursor: default;
 }
 
 .modal__image-container {

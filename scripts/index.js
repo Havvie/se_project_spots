@@ -1,3 +1,19 @@
+// TODO - pass settings object to the functions that need it
+import {
+  enableValidation,
+  resetValidation,
+  disableButton,
+} from "./validation.js";
+
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn-disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible"
+};
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -28,7 +44,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ]
-
+// Profile elements
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -36,16 +52,20 @@ const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector("#profile-name-input");
 const editProfileDescriptionInput = editProfileModal.querySelector("#profile-description-input");
 
+// New post elements
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newCardForm = newPostModal.querySelector(".modal__form");
+const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newCardImageInput = newPostModal.querySelector("#card-image-input");
 const newCardDescriptionInput = newPostModal.querySelector("#card-description-input");
 
 const profileNameEl = document.querySelector(".profile__title");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
+
+// Preview image popups
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
@@ -55,6 +75,7 @@ previewModalCloseBtn.addEventListener("click", () => {
     closeModal(previewModal);
   });
 
+//
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -92,6 +113,8 @@ function getCardElement(data) {
 editProfileBtn.addEventListener("click", function() {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  //Optional: reset validation errors and disable button when opening the form
+  resetValidation(editProfileForm, [editProfileNameInput, editProfileDescriptionInput], settings);
   openModal(editProfileModal);
 });
 
@@ -107,12 +130,26 @@ newPostCloseBtn.addEventListener("click", function() {
   closeModal(newPostModal);
 });
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal__is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal__is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal__is-opened");
+
+  if (!document.querySelector(".modal__is-opened")) {
+    document.removeEventListener("keydown", handleEscClose);
+  }
 }
 
 function handleProfileFormSubmit(evt) {
@@ -126,22 +163,27 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
-
   const inputValues = {
     name: newCardDescriptionInput.value,
     link: newCardImageInput.value,
   };
-
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-
   evt.target.reset();
-
+  disableButton(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
 
 newCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) closeModal(modal);
+  });
+});
+
+enableValidation(settings);
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement)
