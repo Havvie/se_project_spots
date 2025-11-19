@@ -1,18 +1,8 @@
-// TODO - pass settings object to the functions that need it
 import {
   enableValidation,
   resetValidation,
   disableButton,
 } from "./validation.js";
-
-const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn-disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible"
-};
 
 const initialCards = [
   {
@@ -114,7 +104,7 @@ editProfileBtn.addEventListener("click", function() {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   //Optional: reset validation errors and disable button when opening the form
-  resetValidation(editProfileForm, [editProfileNameInput, editProfileDescriptionInput], settings);
+  resetValidation(editProfileForm, [editProfileNameInput, editProfileDescriptionInput]);
   openModal(editProfileModal);
 });
 
@@ -170,7 +160,7 @@ function handleAddCardFormSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
-  disableButton(cardSubmitBtn, settings);
+  disableButton(cardSubmitBtn);
   closeModal(newPostModal);
 }
 
@@ -183,7 +173,6 @@ modals.forEach((modal) => {
   });
 });
 
-enableValidation(settings);
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement)

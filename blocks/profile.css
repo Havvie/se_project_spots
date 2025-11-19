@@ -48,7 +48,7 @@
 .profile__edit-btn {
   color: #212121;
   margin-top: auto;
-  opacity: 70%;
+  opacity: 0.7;
   gap: 8px;
   border: none;
   padding: 0;
@@ -64,7 +64,7 @@
 }
 
 .profile__edit-btn:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .profile__add-btn {
@@ -82,7 +82,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 100%;
+  opacity: 1;
   font-size: 16px;
   font-weight: 500;
   line-height: 100%;
