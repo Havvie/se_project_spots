@@ -17,6 +17,10 @@ This is a photo sharing app that allows users to upload pictures of different lo
 Watch my project pitch video here:
 https://www.loom.com/share/ee210f8fe1634e209c2c6c089667283f
 
+## Submission
+- Live site: (https://havvie.github.io/se_project_spots/)
+- Project pitch video: (https://www.loom.com/share/ee210f8fe1634e209c2c6c089667283f)
+
 ## Deployment
 
 This webpage is deployed to Github Pages
